@@ -1,56 +1,38 @@
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Homework 2">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="author" content="Isaac Williamson">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <h2>Aitoff Projection</h2>
-        <img src="aitoff_projection.png" width="900px" height="500px">
-        <p>The projection outline takes the form of an ellipse. Scale is correct along the equator and the central meridian. Distortion values are symmetric across the equator and the central meridian. This projection is best used for small-scale mapping not requiring accurate area measurements.</p>
-        <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/aitoff.htm">Online Information Source</a>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <h2>WGS84 Projection</h2>
-        <img src="WGS84_projection.png" width="900px" height="500px">
-        <p>World Geodetic System consists of a reference ellipsoid, a standard coordinate system, altitude data, and a geoid. It is used as a reference coordinate system for GPS.</p>
-        <a href="https://gisgeography.com/wgs84-world-geodetic-system/#:~:text=WGS84%20is%20standard%20for%20GPS&text=It%20consists%20of%20a%20reference,which%20is%20better%20than%20NAD83.">Online Information Source</a>
-
-        <h2>Pseudo-Mercator Projection</h2>
-        <img src="pseudo_mercator_projection.png" width="900px" height="500px">
-        <p>It is a conformal cylindrical map projection in which all local shapes are accurate and correctly defined at infinitesimal scale. It is best used for large-scale mapping of the areas near the equator such as Indonesia and parts of the Pacific Ocean.</p>
-        <a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm">Online Information Source</a>
-        
-        <h2>Winkel I Projection</h2>
-        <img src="53018_projection.png" width="900px" height="500px">
-        <p>It is a compromise pseudocylindrical map projection for world maps.</p>
-        <a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/winkel-i.htm">Online Information Source</a>
-        
-        <h2>Cylindrical Equal Area Projection</h2>
-        <img src="54034_projection.png" width="900px" height="500px">
-        <p>It shows the world as a rectangle while maintaining relative areas on a map.</p>
-        <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/cylindrical-equal-area.htm#:~:text=The%20cylindrical%20equal%20area%20projection,variations%20appeared%20over%20the%20years.">Online Information Source</a>
-    
-        <h2>Equidistant Conic Projection</h2>
-        <img src="54027_projection.png" width="900px" height="500px">
-        <p>It preserves distances along all meridians and two standard parallels.</p>
-        <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/equidistant-conic.htm">Online Information Source</a>
-        
-        <h2>Azimuthal Equidistant Projection</h2>
-        <img src="102016_projection.png" width="900px" height="500px">
-        <p>It preserves both distance and direction from the central point, as world is projected onto a flat surface from any point on the globe.</p>
-        <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/azimuthal-equidistant.htm">Online Information Source</a>
-        
-        <h2>Bonne Projection</h2>
-        <img src="bonne_projection.png" width="900px" height="500px">
-        <p>It is an equal-area pseudoconic map projection. Its graticule takes a form of a heart, and it was frequently used to map continents.</p>
-        <a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/bonne.htm">Online Information Source</a>
-        
-        <h2>Cassini Projection</h2>
-        <img src="cassini_projection.png" width="900px" height="500px">
-        <p>It is a transverse cylindrical equidistant projection. The projection maintains scale along the central meridian and all lines perpendicular to the central meridian.</p>
-        <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/cassini.htm#:~:text=The%20Cassini%20projection%20is%20a,perpendicularly%20intersect%20with%20the%20equator.">Online Information Source</a>
-    </body>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([35.90316933, -79.0410741885], 14.0);
+      L.tileLayer('file:///C%3A/Users/Isaac%20Williamson/Downloads/GEOG370/HW4/tiles/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'Generated by TilesXYZ'
+      }).addTo(map);
+  </script>
+</body>
 </html>
