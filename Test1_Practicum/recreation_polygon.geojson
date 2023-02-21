@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "recreation_polygon",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Recreational Development", "Surface": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -115.153784227820921, 36.114183510442501 ], [ -115.151852572799541, 36.108034001102283 ], [ -115.151094581588623, 36.105674447816675 ], [ -115.146020930741315, 36.105772253134212 ], [ -115.146106510394162, 36.114525829053882 ], [ -115.150373267371776, 36.114672537030195 ], [ -115.153784227820921, 36.114183510442501 ] ] ] ] } }
+]
+}
